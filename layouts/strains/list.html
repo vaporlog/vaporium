@@ -5,6 +5,7 @@
 <div class="strains-list-wrapper">
     <header class="list-header">
         <h1>Strains Directory</h1>
+        <p class="total-count">{{ len .Pages }} Strains Registered</p>
         <p>Explore our community-curated database of cannabis strains and their chemical profiles.</p>
     </header>
 
@@ -97,6 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     .strains-list-wrapper { padding: 2rem 0; }
     .list-header { text-align: center; margin-bottom: 3rem; }
+    .list-header .total-count { font-size: 1.2rem; font-weight: bold; color: var(--accent); margin-bottom: 0.5rem; }
     .list-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
     .list-header p { color: var(--secondary); }
 

@@ -3,7 +3,7 @@
 
 <div class="strain-basic-view">
     <nav class="breadcrumb">
-        <a href="/vaporium/strains/"><i class="fa-solid fa-arrow-left"></i> Back to Strains Directory</a>
+        <a href="{{ "strains/" | relURL }}"><i class="fa-solid fa-arrow-left"></i> Back to Strains Directory</a>
     </nav>
     
     <header class="strain-header">
@@ -75,6 +75,29 @@
                 <p>No sessions recorded yet.</p>
             {{ end }}
         </div>
+    </section>
+
+    <section class="comments-section card">
+        <h3><i class="fa-solid fa-comments"></i> Community Discussion</h3>
+        <div id="utterances-container"></div>
+        <script>
+            const getTheme = () => document.body.classList.contains("dark") ? 'github-dark' : 'github-light';
+            const script = document.createElement('script');
+            script.src = 'https://utteranc.es/client.js';
+            script.setAttribute('repo', 'vaporlog/vaporium');
+            script.setAttribute('issue-term', 'pathname');
+            script.setAttribute('label', 'comment');
+            script.setAttribute('theme', getTheme());
+            script.setAttribute('crossorigin', 'anonymous');
+            script.async = true;
+            document.getElementById('utterances-container').appendChild(script);
+
+            const observer = new MutationObserver(() => {
+                const frame = document.querySelector('.utterances-frame');
+                if (frame) frame.contentWindow.postMessage({ type: 'set-theme', theme: getTheme() }, 'https://utteranc.es');
+            });
+            observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+        </script>
     </section>
 
     {{ if .Params.link_reference }}

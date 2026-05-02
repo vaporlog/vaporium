@@ -5,7 +5,7 @@
 <div class="session-single-container">
     <header class="session-header">
         <nav class="breadcrumb">
-            <a href="/vaporium/sessions/"><i class="fa-solid fa-chevron-left"></i> Back to Sessions</a>
+            <a href="{{ "sessions/" | relURL }}"><i class="fa-solid fa-chevron-left"></i> Back to Sessions</a>
         </nav>
         <h1>{{ .Title }}</h1>
         <div class="session-meta-top">
@@ -15,7 +15,7 @@
             {{ end }}
             <span class="meta-item"><i class="fa-solid fa-calendar"></i> {{ .Date.Format "Jan 2, 2006" }}</span>
             {{ with .Params.strain }}
-            <a href="/vaporium/strains/{{ . | urlize }}" class="strain-link"><i class="fa-solid fa-leaf"></i> {{ replace . "-" " " | title }}</a>
+            <a href="{{ printf "strains/%s" (. | urlize) | relURL }}" class="strain-link"><i class="fa-solid fa-leaf"></i> {{ replace . "-" " " | title }}</a>
             {{ end }}
         </div>
     </header>
@@ -87,6 +87,29 @@
         <div class="content-body">
             {{ .Content }}
         </div>
+    </div>
+
+    <div class="comments-section card-style" style="margin-top: 2rem;">
+        <h2><i class="fa-solid fa-comments"></i> Community Discussion</h2>
+        <div id="utterances-container"></div>
+        <script>
+            const getTheme = () => document.body.classList.contains("dark") ? 'github-dark' : 'github-light';
+            const script = document.createElement('script');
+            script.src = 'https://utteranc.es/client.js';
+            script.setAttribute('repo', 'vaporlog/vaporium');
+            script.setAttribute('issue-term', 'pathname');
+            script.setAttribute('label', 'comment');
+            script.setAttribute('theme', getTheme());
+            script.setAttribute('crossorigin', 'anonymous');
+            script.async = true;
+            document.getElementById('utterances-container').appendChild(script);
+
+            const observer = new MutationObserver(() => {
+                const frame = document.querySelector('.utterances-frame');
+                if (frame) frame.contentWindow.postMessage({ type: 'set-theme', theme: getTheme() }, 'https://utteranc.es');
+            });
+            observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
+        </script>
     </div>
 </div>
 

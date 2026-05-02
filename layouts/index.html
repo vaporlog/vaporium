@@ -10,6 +10,25 @@
         <div class="hero-description">{{ .Site.Params.homeInfoParams.Content | markdownify }}</div>
     </section>
 
+    <!-- Global Stats Section -->
+    <section class="global-stats-section">
+        {{ $totalStrains := len (where site.RegularPages "Section" "strains") }}
+        {{ $totalSessions := len (where site.RegularPages "Section" "sessions") }}
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-seedling"></i></div>
+                <span class="stat-value">{{ $totalStrains }}</span>
+                <span class="stat-label">Total Strains</span>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+                <span class="stat-value">{{ $totalSessions }}</span>
+                <span class="stat-label">Total Sessions</span>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Mission & Info -->
     <section class="info-section">
         <div class="info-grid">
@@ -46,7 +65,7 @@
         <div class="filters-container home-filters">
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="text" id="sessionSearch" placeholder="Search sessions, devices or authors...">
+                <input type="text" id="sessionSearch" placeholder="Search by strain, device, author or mood...">
             </div>
             <div class="filter-group">
                 <select id="deviceFilter">
@@ -242,6 +261,33 @@ document.addEventListener('DOMContentLoaded', () => {
         border-color: var(--accent);
         transform: translateY(-1px);
     }
+
+    .global-stats-section {
+        padding: 2rem 0;
+        text-align: center;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 3rem;
+    }
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        justify-content: center;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    .stat-card {
+        background: var(--entry);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .stat-card .stat-icon { font-size: 2.5rem; color: var(--accent, #4caf50); margin-bottom: 1rem; }
+    .stat-card .stat-value { font-size: 2.5rem; font-weight: bold; color: var(--primary); }
+    .stat-card .stat-label { font-size: 0.9rem; color: var(--secondary); text-transform: uppercase; letter-spacing: 1px; }
 
     .empty-state {
         grid-column: 1 / -1;
