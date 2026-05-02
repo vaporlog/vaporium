@@ -34,7 +34,7 @@
             <a href="https://github.com/vaporlog/vaporium" class="cta-button github" target="_blank">
                 <i class="fa-brands fa-github"></i> <span>GitHub Pull Request</span>
             </a>
-            <a href="mailto:alumnodel02@gmail.com" class="cta-button email">
+            <a href="mailto:unalumnodel02@gmail.com" class="cta-button email">
                 <i class="fa-solid fa-envelope"></i> <span>Submit by Email</span>
             </a>
         </div>
@@ -78,11 +78,8 @@
             {{ range (where site.RegularPages "Section" "sessions") }}
             <a href="{{ .RelPermalink }}" class="strain-mini-card">
                 <div class="card-top">
-                    <span class="strain-name"><i class="fa-solid fa-leaf"></i> {{ .Params.strain  }}</span>
+                    <span class="strain-name"><i class="fa-solid fa-leaf"></i> {{ .Params.strain }}</span>
                     <span class="session-badge"><i class="fa-solid fa-star"></i> {{ .Params.rating }}/10</span>
-                </div>
-                <div class="session-title-home">
-                    <h3>{{ .Title }}</h3>
                 </div>
                 
                 <div class="strain-stats">
@@ -93,7 +90,7 @@
                 <div class="card-tags">
                     {{ if .Params.mood }}
                         <div class="tag-group">
-                            {{ range first 3 .Params.mood }}<span class="mini-tag mood">{{ . }}</span>{{ end }}
+                            {{ range first 3 .Params.mood }}<span class="mini-tag effect">{{ . }}</span>{{ end }}
                         </div>
                     {{ end }}
                 </div>
@@ -108,20 +105,56 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('sessionSearch');
-    const list = document.querySelector('.strains-mini-list');
-    
-    if (searchInput && list) {
-        searchInput.addEventListener('input', function() {
-            const filter = this.value.toLowerCase();
-            const cards = list.querySelectorAll('.strain-mini-card');
-            
-            cards.forEach(card => {
-                const text = card.textContent.toLowerCase();
-                card.style.display = text.includes(filter) ? "flex" : "none";
-            });
+    const sessionSearchInput = document.getElementById('sessionSearch');
+    const deviceFilter = document.getElementById('deviceFilter');
+    const moodFilter = document.getElementById('moodFilter');
+    const tempFilter = document.getElementById('tempFilter');
+    const sessionCards = document.querySelectorAll('.strain-mini-card');
+
+    function filterSessions() {
+        const searchValue = sessionSearchInput.value.toLowerCase();
+        const deviceValue = deviceFilter.value.toLowerCase();
+        const moodValue = moodFilter.value.toLowerCase();
+        const tempRange = tempFilter.value;
+
+        let hasResults = false;
+
+        sessionCards.forEach(card => {
+            const text = card.textContent.toLowerCase();
+            const device = card.querySelector('.stat:nth-child(1)').textContent.toLowerCase().trim();
+            const cardMoods = card.querySelector('.card-tags') ? card.querySelector('.card-tags').textContent.toLowerCase() : '';
+            const tempStat = card.querySelector('.stat:nth-child(2)').textContent.toLowerCase();
+            const temp = parseInt(tempStat.replace('°c', '').trim());
+
+            let tempMatch = true;
+            if (tempRange === 'low') tempMatch = temp < 170;
+            else if (tempRange === 'med') tempMatch = temp >= 170 && temp <= 190;
+            else if (tempRange === 'high') tempMatch = temp > 190;
+
+            const matches = text.includes(searchValue) &&
+                          (deviceValue === "" || device.includes(deviceValue)) &&
+                          (moodValue === "" || cardMoods.includes(moodValue)) &&
+                          tempMatch;
+
+            card.style.display = matches ? "flex" : "none";
+            if (matches) hasResults = true;
         });
+
+        let noResultsMsg = document.getElementById('no-results-msg-home');
+        if (!hasResults) {
+            if (!noResultsMsg) {
+                noResultsMsg = document.createElement('p');
+                noResultsMsg.id = 'no-results-msg-home';
+                noResultsMsg.className = 'empty-state';
+                noResultsMsg.textContent = 'No sessions found matching your search.';
+                document.querySelector('.strains-mini-list').appendChild(noResultsMsg);
+            }
+        } else if (noResultsMsg) {
+            noResultsMsg.remove();
+        }
     }
+
+    [sessionSearchInput, deviceFilter, moodFilter, tempFilter].forEach(el => el.addEventListener('input', filterSessions));
 });
 </script>
 
@@ -140,19 +173,83 @@ document.addEventListener('DOMContentLoaded', () => {
     .hero-subtitle { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; }
     .hero-description { max-width: 700px; margin: 0 auto; color: var(--secondary); line-height: 1.6; }
 
-    .search-container.home-search {
-        max-width: 400px;
-        margin: 1rem 0 2rem 0;
-        position: relative;
+    .filters-container.home-filters {
         display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-bottom: 3rem;
         align-items: center;
+        background: var(--tertiary);
+        padding: 2.5rem;
+        border-radius: 24px;
+        border: 1px solid var(--border);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     }
-    .search-container i { position: absolute; left: 12px; color: var(--secondary); font-size: 0.9rem; }
-    .search-container input { 
-        width: 100%; padding: 0.6rem 1rem 0.6rem 2.2rem; border-radius: 20px; 
-        border: 1px solid var(--border); background: var(--entry); color: var(--primary); outline: none;
+
+    .search-box {
+        position: relative;
+        width: 100%;
+        max-width: 600px;
     }
-    .search-container input:focus { border-color: var(--accent); }
+
+    .search-box i {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--secondary);
+        font-size: 1.1rem;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 1.1rem 1.5rem 1.1rem 3.5rem;
+        border-radius: 50px;
+        border: 2px solid var(--border);
+        background: var(--entry);
+        color: var(--primary);
+        outline: none;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .search-box input:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.15);
+        background: var(--theme);
+    }
+
+    .filter-group {
+        display: flex;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filter-group select {
+        padding: 0.7rem 1.5rem;
+        border-radius: 30px;
+        border: 2px solid var(--border);
+        background: var(--entry);
+        color: var(--primary);
+        outline: none;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+
+    .filter-group select:hover {
+        border-color: var(--accent);
+        transform: translateY(-1px);
+    }
+
+    .empty-state {
+        grid-column: 1 / -1;
+        text-align: center;
+        padding: 2rem;
+        color: var(--secondary);
+        font-style: italic;
+    }
 
     .info-section { padding: 3rem 0; }
     .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
