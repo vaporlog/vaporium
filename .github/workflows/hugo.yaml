@@ -2,7 +2,7 @@ name: Build and deploy
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 permissions:
   contents: read
@@ -18,10 +18,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      DART_SASS_VERSION: 1.99.0
-      GO_VERSION: 1.26.1
-      HUGO_VERSION: 0.160.0
-      NODE_VERSION: 24.14.1
+      DART_SASS_VERSION: 1.77.0
+      GO_VERSION: 1.22.2
+      HUGO_VERSION: 0.125.5
+      NODE_VERSION: 20
       TZ: Europe/Oslo
     steps:
       - name: Checkout
