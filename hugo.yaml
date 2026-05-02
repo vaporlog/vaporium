@@ -1,6 +1,7 @@
 baseURL: "https://vaporium.github.io/"
 title: Vaporium
-paginate: 5
+pagination:
+  pagerSize: 5
 theme: PaperMod
 
 enableRobotsTXT: true
