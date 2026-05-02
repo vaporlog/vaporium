@@ -1,0 +1,147 @@
+{{ define "main" }}
+<!-- FontAwesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<div class="sessions-list-wrapper">
+    <header class="list-header">
+        <h1>Session Logs</h1>
+        <p>Explore detailed vaporization experiences shared by the community.</p>
+    </header>
+
+    <div class="filters-container">
+        <div class="search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="sessionSearch" placeholder="Search sessions...">
+        </div>
+        <div class="filter-group">
+            <select id="deviceFilter">
+                <option value="">All Devices</option>
+                {{ range (where site.RegularPages "Section" "sessions").GroupByParam "vaporizer" }}
+                <option value="{{ .Key | lower }}">{{ .Key }}</option>
+                {{ end }}
+            </select>
+            <select id="moodFilter">
+                <option value="">All Moods</option>
+                <option value="relaxed">Relaxed</option>
+                <option value="euphoric">Euphoric</option>
+                <option value="creative">Creative</option>
+                <option value="focused">Focused</option>
+                <option value="sleepy">Sleepy</option>
+            </select>
+            <select id="tempFilter">
+                <option value="">All Temps</option>
+                <option value="low">Low (< 170°C)</option>
+                <option value="med">Medium (170-190°C)</option>
+                <option value="high">High (> 190°C)</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="sessions-grid" id="sessionsGrid">
+        {{ range .Pages }}
+        <div class="session-item-card" 
+             data-device="{{ .Params.vaporizer | lower }}" 
+             data-mood="{{ delimit .Params.mood " " | lower }}" 
+             data-temp="{{ .Params.temperature }}">
+            <a href="{{ .Permalink }}">
+                <div class="card-header">
+                    <span class="strain-ref"><i class="fa-solid fa-leaf"></i> {{ .Params.strain | replace "-" " " | title }}</span>
+                    <span class="rating-badge"><i class="fa-solid fa-star"></i> {{ .Params.rating }}</span>
+                </div>
+                <h3>{{ .Title }}</h3>
+                <div class="session-specs">
+                    <span><i class="fa-solid fa-wind"></i> {{ .Params.vaporizer }}</span>
+                    <span><i class="fa-solid fa-temperature-half"></i> {{ .Params.temperature }}°C</span>
+                </div>
+                <div class="session-tags">
+                    {{ range first 3 .Params.mood }}
+                    <span class="mini-tag">{{ . }}</span>
+                    {{ end }}
+                </div>
+                <div class="card-footer">
+                    <span>By {{ .Params.author }}</span>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </a>
+        </div>
+        {{ end }}
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('sessionSearch');
+    const deviceFilter = document.getElementById('deviceFilter');
+    const moodFilter = document.getElementById('moodFilter');
+    const tempFilter = document.getElementById('tempFilter');
+    const cards = document.querySelectorAll('.session-item-card');
+
+    function filterSessions() {
+        const searchValue = searchInput.value.toLowerCase();
+        const deviceValue = deviceFilter.value.toLowerCase();
+        const moodValue = moodFilter.value.toLowerCase();
+        const tempRange = tempFilter.value;
+
+        cards.forEach(card => {
+            const text = card.textContent.toLowerCase();
+            const device = card.dataset.device;
+            const mood = card.dataset.mood;
+            const temp = parseInt(card.dataset.temp);
+
+            let tempMatch = true;
+            if (tempRange === 'low') tempMatch = temp < 170;
+            else if (tempRange === 'med') tempMatch = temp >= 170 && temp <= 190;
+            else if (tempRange === 'high') tempMatch = temp > 190;
+
+            const matches = text.includes(searchValue) &&
+                          (deviceValue === "" || device === deviceValue) &&
+                          (moodValue === "" || mood.includes(moodValue)) &&
+                          tempMatch;
+
+            card.style.display = matches ? "" : "none";
+        });
+    }
+
+    [searchInput, deviceFilter, moodFilter, tempFilter].forEach(el => el.addEventListener('input', filterSessions));
+});
+</script>
+
+<style>
+    .sessions-list-wrapper { padding: 2rem 0; }
+    .list-header { text-align: center; margin-bottom: 3rem; }
+    .filters-container { display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 3rem; align-items: center; }
+    .search-box { position: relative; width: 100%; max-width: 500px; }
+    .search-box i { position: absolute; left: 15px; top: 50%; transform: translateY(-50%); color: var(--secondary); }
+    .search-box input { width: 100%; padding: 0.8rem 1rem 0.8rem 2.5rem; border-radius: 25px; border: 1px solid var(--border); background: var(--entry); color: var(--primary); outline: none; }
+    
+    .filter-group { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .filter-group select { padding: 0.5rem 1rem; border-radius: 10px; border: 1px solid var(--border); background: var(--entry); color: var(--primary); outline: none; }
+
+    .sessions-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    .session-item-card { background: var(--entry); border: 1px solid var(--border); border-radius: 15px; transition: transform 0.2s, border-color 0.2s; overflow: hidden; }
+    .session-item-card:hover { transform: translateY(-5px); border-color: var(--accent, #4caf50); }
+    .session-item-card a { text-decoration: none; color: inherit; padding: 1.5rem; display: flex; flex-direction: column; height: 100%; }
+    
+    .card-header { display: flex; justify-content: space-between; margin-bottom: 0.8rem; }
+    .strain-ref { font-size: 0.75rem; font-weight: bold; color: var(--accent, #4caf50); text-transform: uppercase; }
+    .rating-badge { background: var(--tertiary); padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; font-weight: bold; color: #ffb300; }
+    
+    .session-item-card h3 { margin: 0 0 1rem 0; font-size: 1.2rem; }
+    .session-specs { display: flex; gap: 1rem; font-size: 0.85rem; color: var(--secondary); margin-bottom: 1rem; }
+    .session-specs i { color: var(--accent, #4caf50); }
+    
+    .session-tags { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .mini-tag { font-size: 0.7rem; background: var(--tertiary); padding: 2px 8px; border-radius: 5px; color: var(--secondary); }
+    
+    .card-footer { 
+        margin-top: auto; 
+        border-top: 1px solid var(--border); 
+        padding-top: 1rem; 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        font-size: 0.8rem; 
+        color: var(--secondary); 
+    }
+</style>
+{{ end }}

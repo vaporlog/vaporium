@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Strains on Vaporium</title>
+    <link>http://localhost:1313/vaporium/strains/</link>
+    <description>Recent content in Strains on Vaporium</description>
+    <image>
+      <title>Vaporium</title>
+      <url>http://localhost:1313/vaporium/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/vaporium/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.160.0</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 02 May 2026 12:45:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/vaporium/strains/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Strawberry Banana</title>
+      <link>http://localhost:1313/vaporium/strains/strawberry-banana/</link>
+      <pubDate>Sat, 02 May 2026 12:45:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/strawberry-banana/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sour Tangie</title>
+      <link>http://localhost:1313/vaporium/strains/sour-tangie/</link>
+      <pubDate>Sat, 02 May 2026 12:40:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/sour-tangie/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Skywalker OG</title>
+      <link>http://localhost:1313/vaporium/strains/skywalker-og/</link>
+      <pubDate>Sat, 02 May 2026 12:35:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/skywalker-og/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mazar I Sharif</title>
+      <link>http://localhost:1313/vaporium/strains/mazar-i-sharif/</link>
+      <pubDate>Sat, 02 May 2026 12:30:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/mazar-i-sharif/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Mimosa</title>
+      <link>http://localhost:1313/vaporium/strains/mimosa/</link>
+      <pubDate>Sat, 02 May 2026 12:25:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/mimosa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Master Kush</title>
+      <link>http://localhost:1313/vaporium/strains/master-kush/</link>
+      <pubDate>Sat, 02 May 2026 12:20:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/master-kush/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LA Confidential</title>
+      <link>http://localhost:1313/vaporium/strains/la-confidential/</link>
+      <pubDate>Sat, 02 May 2026 12:15:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/la-confidential/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ice Cream Cake</title>
+      <link>http://localhost:1313/vaporium/strains/ice-cream-cake/</link>
+      <pubDate>Sat, 02 May 2026 12:10:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/ice-cream-cake/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grape Ape</title>
+      <link>http://localhost:1313/vaporium/strains/grape-ape/</link>
+      <pubDate>Sat, 02 May 2026 12:05:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/grape-ape/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ghost Train Haze</title>
+      <link>http://localhost:1313/vaporium/strains/ghost-train-haze/</link>
+      <pubDate>Sat, 02 May 2026 12:00:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/ghost-train-haze/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bruce Banner</title>
+      <link>http://localhost:1313/vaporium/strains/bruce-banner/</link>
+      <pubDate>Sat, 02 May 2026 11:45:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/bruce-banner/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blackberry Kush</title>
+      <link>http://localhost:1313/vaporium/strains/blackberry-kush/</link>
+      <pubDate>Sat, 02 May 2026 11:40:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/blackberry-kush/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Banana Kush</title>
+      <link>http://localhost:1313/vaporium/strains/banana-kush/</link>
+      <pubDate>Sat, 02 May 2026 11:35:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/banana-kush/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Alaskan Thunder Fuck</title>
+      <link>http://localhost:1313/vaporium/strains/alaskan-thunder-fuck/</link>
+      <pubDate>Sat, 02 May 2026 11:30:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/alaskan-thunder-fuck/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Zkittlez</title>
+      <link>http://localhost:1313/vaporium/strains/zkittlez/</link>
+      <pubDate>Sat, 02 May 2026 11:25:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/zkittlez/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Thai</title>
+      <link>http://localhost:1313/vaporium/strains/thai/</link>
+      <pubDate>Sat, 02 May 2026 11:20:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/thai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tangie</title>
+      <link>http://localhost:1313/vaporium/strains/tangie/</link>
+      <pubDate>Sat, 02 May 2026 11:15:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/tangie/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tahoe OG Kush</title>
+      <link>http://localhost:1313/vaporium/strains/tahoe-og-kush/</link>
+      <pubDate>Sat, 02 May 2026 11:10:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/tahoe-og-kush/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Super Silver Haze</title>
+      <link>http://localhost:1313/vaporium/strains/super-silver-haze/</link>
+      <pubDate>Sat, 02 May 2026 11:05:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/super-silver-haze/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Super Lemon Haze</title>
+      <link>http://localhost:1313/vaporium/strains/super-lemon-haze/</link>
+      <pubDate>Sat, 02 May 2026 11:00:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/super-lemon-haze/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Strawberry Cough</title>
+      <link>http://localhost:1313/vaporium/strains/strawberry-cough/</link>
+      <pubDate>Sat, 02 May 2026 10:45:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/strawberry-cough/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sherbert</title>
+      <link>http://localhost:1313/vaporium/strains/sherbert/</link>
+      <pubDate>Sat, 02 May 2026 10:40:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/sherbert/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Purple Punch</title>
+      <link>http://localhost:1313/vaporium/strains/purple-punch/</link>
+      <pubDate>Sat, 02 May 2026 10:35:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/purple-punch/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Maui Wowie</title>
+      <link>http://localhost:1313/vaporium/strains/maui-wowie/</link>
+      <pubDate>Sat, 02 May 2026 10:30:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/maui-wowie/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lemon Haze</title>
+      <link>http://localhost:1313/vaporium/strains/lemon-haze/</link>
+      <pubDate>Sat, 02 May 2026 10:25:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/lemon-haze/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Hindu Kush</title>
+      <link>http://localhost:1313/vaporium/strains/hindu-kush/</link>
+      <pubDate>Sat, 02 May 2026 10:20:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/hindu-kush/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Headband</title>
+      <link>http://localhost:1313/vaporium/strains/headband/</link>
+      <pubDate>Sat, 02 May 2026 10:15:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/headband/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Harlequin</title>
+      <link>http://localhost:1313/vaporium/strains/harlequin/</link>
+      <pubDate>Sat, 02 May 2026 10:10:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/harlequin/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Green Crack</title>
+      <link>http://localhost:1313/vaporium/strains/green-crack/</link>
+      <pubDate>Sat, 02 May 2026 10:05:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/green-crack/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Gelato</title>
+      <link>http://localhost:1313/vaporium/strains/gelato/</link>
+      <pubDate>Sat, 02 May 2026 10:00:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/gelato/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cherry Pie</title>
+      <link>http://localhost:1313/vaporium/strains/cherry-pie/</link>
+      <pubDate>Sat, 02 May 2026 09:45:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/cherry-pie/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Chemdawg</title>
+      <link>http://localhost:1313/vaporium/strains/chemdawg/</link>
+      <pubDate>Sat, 02 May 2026 09:40:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/chemdawg/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blueberry</title>
+      <link>http://localhost:1313/vaporium/strains/blueberry/</link>
+      <pubDate>Sat, 02 May 2026 09:35:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/blueberry/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Amnesia Haze</title>
+      <link>http://localhost:1313/vaporium/strains/amnesia-haze/</link>
+      <pubDate>Sat, 02 May 2026 09:30:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/amnesia-haze/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ACDC</title>
+      <link>http://localhost:1313/vaporium/strains/acdc/</link>
+      <pubDate>Sat, 02 May 2026 09:25:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/acdc/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Trainwreck</title>
+      <link>http://localhost:1313/vaporium/strains/trainwreck/</link>
+      <pubDate>Sat, 02 May 2026 09:20:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/trainwreck/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AK-47</title>
+      <link>http://localhost:1313/vaporium/strains/ak-47/</link>
+      <pubDate>Sat, 02 May 2026 09:15:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/ak-47/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pineapple Express</title>
+      <link>http://localhost:1313/vaporium/strains/pineapple-express/</link>
+      <pubDate>Sat, 02 May 2026 09:10:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/pineapple-express/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bubba Kush</title>
+      <link>http://localhost:1313/vaporium/strains/bubba-kush/</link>
+      <pubDate>Sat, 02 May 2026 09:05:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/bubba-kush/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>White Widow</title>
+      <link>http://localhost:1313/vaporium/strains/white-widow/</link>
+      <pubDate>Sat, 02 May 2026 09:00:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/white-widow/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>GG4</title>
+      <link>http://localhost:1313/vaporium/strains/gg4/</link>
+      <pubDate>Sat, 02 May 2026 08:45:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/gg4/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Wedding Cake</title>
+      <link>http://localhost:1313/vaporium/strains/wedding-cake/</link>
+      <pubDate>Sat, 02 May 2026 08:40:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/wedding-cake/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Durban Poison</title>
+      <link>http://localhost:1313/vaporium/strains/durban-poison/</link>
+      <pubDate>Sat, 02 May 2026 08:35:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/durban-poison/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Northern Lights</title>
+      <link>http://localhost:1313/vaporium/strains/northern-lights/</link>
+      <pubDate>Sat, 02 May 2026 08:30:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/northern-lights/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Jack Herer</title>
+      <link>http://localhost:1313/vaporium/strains/jack-herer/</link>
+      <pubDate>Sat, 02 May 2026 08:25:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/jack-herer/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Granddaddy Purple</title>
+      <link>http://localhost:1313/vaporium/strains/granddaddy-purple/</link>
+      <pubDate>Sat, 02 May 2026 08:20:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/granddaddy-purple/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Girl Scout Cookies</title>
+      <link>http://localhost:1313/vaporium/strains/girl-scout-cookies/</link>
+      <pubDate>Sat, 02 May 2026 08:15:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/girl-scout-cookies/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sour Diesel</title>
+      <link>http://localhost:1313/vaporium/strains/sour-diesel/</link>
+      <pubDate>Sat, 02 May 2026 08:10:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/sour-diesel/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Blue Dream</title>
+      <link>http://localhost:1313/vaporium/strains/blue-dream/</link>
+      <pubDate>Sat, 02 May 2026 08:05:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/blue-dream/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OG Kush</title>
+      <link>http://localhost:1313/vaporium/strains/og-kush/</link>
+      <pubDate>Sat, 02 May 2026 08:00:00 -0600</pubDate>
+      <guid>http://localhost:1313/vaporium/strains/og-kush/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

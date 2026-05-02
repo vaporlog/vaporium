@@ -1,0 +1,132 @@
+{{ define "main" }}
+<!-- FontAwesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<div class="session-single-container">
+    <header class="session-header">
+        <nav class="breadcrumb">
+            <a href="/sessions/"><i class="fa-solid fa-chevron-left"></i> Back to Sessions</a>
+        </nav>
+        <h1>{{ .Title }}</h1>
+        <div class="session-meta-top">
+            <span class="meta-item"><i class="fa-solid fa-user"></i> {{ .Params.author }}</span>
+            {{ if .Params.email_author }}
+            <span class="meta-item"><i class="fa-solid fa-envelope"></i> <a href="mailto:{{ .Params.email_author }}" style="color: inherit;">{{ .Params.email_author }}</a></span>
+            {{ end }}
+            <span class="meta-item"><i class="fa-solid fa-calendar"></i> {{ .Date.Format "Jan 2, 2006" }}</span>
+            {{ with .Params.strain }}
+            <a href="/strains/{{ . | urlize }}" class="strain-link"><i class="fa-solid fa-leaf"></i> {{ replace . "-" " " | title }}</a>
+            {{ end }}
+        </div>
+    </header>
+
+    <div class="session-grid">
+        <!-- Technical Panel -->
+        <div class="panel technical">
+            <h3><i class="fa-solid fa-gear"></i> Setup & Tech</h3>
+            <div class="spec-list">
+                <div class="spec-item">
+                    <span class="label">Vaporizer</span>
+                    <span class="value">{{ .Params.vaporizer }}</span>
+                </div>
+                <div class="spec-item">
+                    <span class="label">Temperature</span>
+                    <span class="value temp-highlight">{{ .Params.temperature }}°C</span>
+                </div>
+                <div class="spec-item">
+                    <span class="label">Duration</span>
+                    <span class="value">{{ .Params.session_duration }}</span>
+                </div>
+            </div>
+            <div class="rating-box">
+                <span class="label">Session Rating</span>
+                <div class="rating-visual">
+                    <span class="rating-num">{{ .Params.rating }}</span><span class="rating-den">/10</span>
+                </div>
+                <div class="rating-bar"><div class="fill" style="width: {{ mul .Params.rating 10 }}%"></div></div>
+            </div>
+        </div>
+
+        <!-- Profile Panel -->
+        <div class="panel sensory">
+            <h3><i class="fa-solid fa-palette"></i> Sensory Profile</h3>
+            <div class="tag-group">
+                <p><i class="fa-solid fa-wind"></i> Aromas</p>
+                <div class="tags">
+                    {{ range .Params.aromas }}<span class="tag aroma">{{ . }}</span>{{ end }}
+                </div>
+            </div>
+            <div class="tag-group">
+                <p><i class="fa-solid fa-tongue"></i> Flavors</p>
+                <div class="tags">
+                    {{ range .Params.flavors }}<span class="tag flavor">{{ . }}</span>{{ end }}
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Panel -->
+        <div class="panel experience">
+            <h3><i class="fa-solid fa-brain"></i> Experience</h3>
+            <div class="tag-group">
+                <p><i class="fa-solid fa-face-smile"></i> Mood / Feelings</p>
+                <div class="tags">
+                    {{ range .Params.mood }}<span class="tag mood">{{ . }}</span>{{ end }}
+                </div>
+            </div>
+            <div class="tag-group">
+                <p><i class="fa-solid fa-person-walking-arrow-right"></i> Activities</p>
+                <div class="tags">
+                    {{ range .Params.activities }}<span class="tag activity">{{ . }}</span>{{ end }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="session-content card-style">
+        <h2><i class="fa-solid fa-pen-nib"></i> Session Notes</h2>
+        <div class="content-body">
+            {{ .Content }}
+        </div>
+    </div>
+</div>
+
+<style>
+    .session-single-container { padding: 1rem 0; color: var(--primary); }
+    .breadcrumb { margin-bottom: 1.5rem; }
+    .breadcrumb a { color: var(--secondary); text-decoration: none; font-size: 0.9rem; }
+    .session-header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .session-meta-top { display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 2rem; color: var(--secondary); font-size: 0.9rem; }
+    .strain-link { color: var(--accent, #4caf50); font-weight: bold; text-decoration: none; }
+
+    .session-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+    .panel { background: var(--entry); border: 1px solid var(--border); border-radius: 16px; padding: 1.5rem; }
+    .panel h3 { font-size: 1rem; margin-bottom: 1.2rem; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; color: var(--secondary); }
+    .panel h3 i { color: var(--accent, #4caf50); margin-right: 8px; }
+
+    .spec-list { display: flex; flex-direction: column; gap: 12px; margin-bottom: 1.5rem; }
+    .spec-item { display: flex; justify-content: space-between; align-items: center; }
+    .spec-item .label { font-size: 0.75rem; color: var(--secondary); font-weight: bold; }
+    .spec-item .value { font-weight: bold; }
+    .temp-highlight { color: #ff5722; font-size: 1.2rem; }
+
+    .rating-box { text-align: center; background: var(--tertiary); padding: 1rem; border-radius: 12px; }
+    .rating-visual { margin-bottom: 8px; }
+    .rating-num { font-size: 2rem; font-weight: 900; color: #ffb300; }
+    .rating-den { color: var(--secondary); font-weight: bold; }
+    .rating-bar { height: 6px; background: var(--border); border-radius: 10px; overflow: hidden; }
+    .rating-bar .fill { height: 100%; background: #ffb300; }
+
+    .tag-group { margin-bottom: 1.5rem; }
+    .tag-group p { font-size: 0.8rem; font-weight: bold; margin-bottom: 10px; color: var(--secondary); display: flex; align-items: center; gap: 6px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { padding: 4px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 500; background: var(--tertiary); color: var(--primary); }
+    .tag.aroma { border-left: 3px solid #ffa726; }
+    .tag.flavor { border-left: 3px solid #ff7043; }
+    .tag.mood { border-left: 3px solid #42a5f5; }
+    .tag.activity { border-left: 3px solid #66bb6a; }
+
+    .card-style { background: var(--entry); border: 1px solid var(--border); padding: 2rem; border-radius: 16px; }
+    .card-style h2 { font-size: 1.3rem; margin-bottom: 1.5rem; border-left: 4px solid var(--accent, #4caf50); padding-left: 12px; }
+    .content-body { line-height: 1.8; }
+</style>
+{{ end }}

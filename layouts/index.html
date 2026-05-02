@@ -1,0 +1,198 @@
+{{ define "main" }}
+<!-- FontAwesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<div class="home-wrapper">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h1 class="hero-title">{{ .Site.Params.homeInfoParams.Title }}</h1>
+        <p class="hero-subtitle">Documenting, analyzing, and preserving vaporization knowledge.</p>
+        <div class="hero-description">{{ .Site.Params.homeInfoParams.Content | markdownify }}</div>
+    </section>
+
+    <!-- Mission & Info -->
+    <section class="info-section">
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="icon"><i class="fa-solid fa-microscope"></i></div>
+                <h3>Scientific Approach</h3>
+                <p>We combine personal observation with technical data to find the "sweet spot" of every strain. Documentation is key to efficiency and health.</p>
+            </div>
+            <div class="info-card">
+                <div class="icon"><i class="fa-solid fa-database"></i></div>
+                <h3>Systematic Archive</h3>
+                <p>Unlike commercial sites, we focus on a methodical record of the vaporization act, sharing settings, results, and sensory profiles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collaboration Section -->
+    <section class="collaboration-section">
+        <h2>Join the Community</h2>
+        <p>This project is open-source and collaborative. We welcome your session logs and strain data!</p>
+        <div class="cta-container">
+            <a href="https://github.com/vaporium/vaporium" class="cta-button github" target="_blank">
+                <i class="fa-brands fa-github"></i> <span>GitHub Pull Request</span>
+            </a>
+            <a href="mailto:alumnodel02@gmail.com" class="cta-button email">
+                <i class="fa-solid fa-envelope"></i> <span>Submit by Email</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Dynamic Content: Recent Sessions -->
+    <section class="recent-updates">
+        <h2>Recent Community Sessions</h2>
+        <div class="search-container home-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="sessionSearch" placeholder="Search sessions, devices or authors...">
+        </div>
+
+        <div class="strains-mini-list">
+            {{ range (where site.RegularPages "Section" "sessions") }}
+            <a href="{{ .RelPermalink }}" class="strain-mini-card">
+                <div class="card-top">
+                    <span class="strain-name"><i class="fa-solid fa-leaf"></i> {{ .Params.strain | replace "-" " " | title }}</span>
+                    <span class="session-badge"><i class="fa-solid fa-star"></i> {{ .Params.rating }}/10</span>
+                </div>
+                
+                <div class="strain-stats">
+                    <span class="stat"><i class="fa-solid fa-wind"></i> {{ .Params.vaporizer }}</span>
+                    <span class="stat"><i class="fa-solid fa-temperature-half"></i> {{ .Params.temperature }}°C</span>
+                </div>
+
+                <div class="card-tags">
+                    {{ if .Params.mood }}
+                        <div class="tag-group">
+                            {{ range first 3 .Params.mood }}<span class="mini-tag effect">{{ . }}</span>{{ end }}
+                        </div>
+                    {{ end }}
+                </div>
+                <div style="font-size: 0.75rem; color: var(--secondary); margin-top: 0.5rem; border-top: 1px solid var(--border); padding-top: 0.5rem;">
+                    by <strong>{{ .Params.author }}</strong>
+                </div>
+            </a>
+            {{ end }}
+        </div>
+    </section>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('sessionSearch');
+    const list = document.querySelector('.strains-mini-list');
+    
+    if (searchInput && list) {
+        searchInput.addEventListener('input', function() {
+            const filter = this.value.toLowerCase();
+            const cards = list.querySelectorAll('.strain-mini-card');
+            
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(filter) ? "flex" : "none";
+            });
+        });
+    }
+});
+</script>
+
+<style>
+    .home-wrapper {
+        max-width: var(--main-width);
+        margin: 0 auto;
+        padding: 2rem var(--gap);
+    }
+    .hero-section {
+        text-align: center;
+        padding: 4rem 0;
+        border-bottom: 1px solid var(--border);
+    }
+    .hero-title { font-size: 3.5rem; margin-bottom: 0.5rem; color: var(--accent, #4caf50); }
+    .hero-subtitle { font-size: 1.5rem; font-weight: bold; margin-bottom: 1rem; }
+    .hero-description { max-width: 700px; margin: 0 auto; color: var(--secondary); line-height: 1.6; }
+
+    .search-container.home-search {
+        max-width: 400px;
+        margin: 1rem 0 2rem 0;
+        position: relative;
+        display: flex;
+        align-items: center;
+    }
+    .search-container i { position: absolute; left: 12px; color: var(--secondary); font-size: 0.9rem; }
+    .search-container input { 
+        width: 100%; padding: 0.6rem 1rem 0.6rem 2.2rem; border-radius: 20px; 
+        border: 1px solid var(--border); background: var(--entry); color: var(--primary); outline: none;
+    }
+    .search-container input:focus { border-color: var(--accent); }
+
+    .info-section { padding: 3rem 0; }
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+    .info-card { 
+        background: var(--entry); 
+        padding: 2rem; 
+        border-radius: 12px; 
+        border: 1px solid var(--border);
+        transition: transform 0.3s ease;
+    }
+    .info-card:hover { transform: translateY(-5px); }
+    .info-card h3 { margin: 1rem 0; color: var(--primary); }
+    .info-card .icon { font-size: 2rem; color: var(--accent, #4caf50); }
+
+    .collaboration-section {
+        text-align: center;
+        padding: 3rem 2rem;
+        background: var(--tertiary);
+        border-radius: 12px;
+        margin: 2rem 0;
+    }
+    .cta-container { display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap; }
+    .cta-button {
+        padding: 0.8rem 1.5rem;
+        border-radius: 8px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: opacity 0.2s;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .cta-button.github { background: var(--primary); color: var(--theme); }
+    .cta-button.email { background: var(--accent, #4caf50); color: white; }
+    .cta-button:hover { opacity: 0.8; }
+
+    .recent-updates { padding: 2rem 0; }
+    .strains-mini-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    .strain-mini-card {
+        display: flex;
+        flex-direction: column;
+        padding: 1.2rem;
+        background: var(--entry);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        text-decoration: none;
+        transition: transform 0.2s, border-color 0.2s;
+    }
+    .strain-mini-card:hover { border-color: var(--accent, #4caf50); transform: translateY(-3px); }
+    
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.8rem; }
+    .strain-name { font-weight: bold; color: var(--primary); display: flex; align-items: center; gap: 8px; font-size: 1.1rem; }
+    .strain-name i { color: var(--accent); font-size: 0.8rem; }
+    .session-badge { font-size: 0.75rem; background: var(--tertiary); padding: 2px 8px; border-radius: 10px; color: var(--secondary); }
+
+    .strain-stats { display: flex; gap: 12px; margin-bottom: 1rem; align-items: center; }
+    .stat { font-size: 0.85rem; font-weight: bold; color: var(--primary); }
+    .stat i { color: var(--accent); margin-right: 4px; }
+    .type-label { font-size: 0.75rem; color: var(--secondary); margin-left: auto; font-style: italic; }
+
+    .card-tags { display: flex; flex-direction: column; gap: 6px; }
+    .tag-group { display: flex; gap: 4px; flex-wrap: wrap; }
+    .mini-tag { font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; background: var(--border); color: var(--secondary); }
+    .mini-tag.aroma { border-left: 3px solid #ffa726; }
+    .mini-tag.effect { border-left: 3px solid #42a5f5; }
+</style>
+{{ end }}
