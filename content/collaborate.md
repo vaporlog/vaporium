@@ -10,7 +10,7 @@ Vaporium is a community project. Your experiences help others find the perfect v
 
 For those familiar with Git, the best way to contribute is by sending a Pull Request directly to our repository.
 
-1. **Fork** the repository: [Vaporium](https://github.com/vaporium/vaporium)
+1. **Fork** the repository: [Vaporium](https://github.com/vaporlog/vaporium)
 2. **Add** your `.md` file to the `content/strains/` or `content/sessions/` folder.
 3. **Submit** your Pull Request.
 
@@ -18,7 +18,7 @@ For those familiar with Git, the best way to contribute is by sending a Pull Req
 
 If you are not a developer, you can send us an email with the details of your strain or session. 
 
-Please send the data in **YML (Front Matter)** format to: **alumnodel02@gmail.com**
+Please send the data in **YML (Front Matter)** format to: **unalumnodel02@gmail.com**
 
 ---
 
@@ -29,30 +29,38 @@ Copy and fill these templates in your submission to ensure the data is processed
 ### New Strain Template
 ```yaml
 ---
-name: "Strain Name"
+date: '{{ .Date }}'
+draft: true
+title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+strain_id: "{{ .File.ContentBaseName }}"
+name: "{{ replace .File.ContentBaseName "-" " " | title }}"
 strain_type: "Hybrid" # Indica / Sativa / Hybrid
 thc: 0
 cbd: 0
-terpenes: ["Myrcene", "Limonene"]
-aromas: ["Pine", "Citrus"]
-effects: ["Relaxing", "Creative"]
-lineage: "Parent A x Parent B"
-link_reference: "Leafly URL"
+terpenes: []
+aromas: [] # e.g., Citrus, Earthy, Pine
+effects: [] # e.g., Relaxing, Creative, Euphoria
+lineage: "" # Parentage
+link_reference: ""
 ---
 ```
 
 ### New Session Template
 ```yaml
 ---
-strain: "strain-id" # e.g. blue-dream
-author: "Your Name"
-vaporizer: "Device Name"
-temperature: 180
-session_duration: "10 min"
-aromas: ["Herbal"]
-flavors: ["Sweet"]
-activities: ["Gaming"]
-rating: 8 # 1 to 10 scale
-mood: ["Relaxed"]
+date: '{{ .Date }}'
+draft: true
+title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+strain: "" # Reference to the strain_id
+author: ""
+email_author: ""
+vaporizer: ""
+temperature: 0 # in °C
+session_duration: "" # e.g., 10 min
+aromas: [] # e.g., Herbal, Spicy, Fruity
+flavors: [] # e.g., Pine, Woody, Sweet
+activities: [] # e.g., Gaming, Reading, Nature, Social
+rating: 0 # 1 to 10 scale
+mood: [] # Feelings or mood, e.g., Relaxed, Euphoric, Creative, Focused
 ---
 ```

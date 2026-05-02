@@ -5,7 +5,7 @@
 <div class="session-single-container">
     <header class="session-header">
         <nav class="breadcrumb">
-            <a href="/sessions/"><i class="fa-solid fa-chevron-left"></i> Back to Sessions</a>
+            <a href="/vaporium/sessions/"><i class="fa-solid fa-chevron-left"></i> Back to Sessions</a>
         </nav>
         <h1>{{ .Title }}</h1>
         <div class="session-meta-top">
@@ -15,7 +15,7 @@
             {{ end }}
             <span class="meta-item"><i class="fa-solid fa-calendar"></i> {{ .Date.Format "Jan 2, 2006" }}</span>
             {{ with .Params.strain }}
-            <a href="/strains/{{ . | urlize }}" class="strain-link"><i class="fa-solid fa-leaf"></i> {{ replace . "-" " " | title }}</a>
+            <a href="/vaporium/strains/{{ . | urlize }}" class="strain-link"><i class="fa-solid fa-leaf"></i> {{ replace . "-" " " | title }}</a>
             {{ end }}
         </div>
     </header>

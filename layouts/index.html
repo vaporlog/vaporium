@@ -31,7 +31,7 @@
         <h2>Join the Community</h2>
         <p>This project is open-source and collaborative. We welcome your session logs and strain data!</p>
         <div class="cta-container">
-            <a href="https://github.com/vaporium/vaporium" class="cta-button github" target="_blank">
+            <a href="https://github.com/vaporlog/vaporium" class="cta-button github" target="_blank">
                 <i class="fa-brands fa-github"></i> <span>GitHub Pull Request</span>
             </a>
             <a href="mailto:alumnodel02@gmail.com" class="cta-button email">
@@ -43,17 +43,46 @@
     <!-- Dynamic Content: Recent Sessions -->
     <section class="recent-updates">
         <h2>Recent Community Sessions</h2>
-        <div class="search-container home-search">
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <input type="text" id="sessionSearch" placeholder="Search sessions, devices or authors...">
+        <div class="filters-container home-filters">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="sessionSearch" placeholder="Search sessions, devices or authors...">
+            </div>
+            <div class="filter-group">
+                <select id="deviceFilter">
+                    <option value="">All Devices</option>
+                    {{ range (where site.RegularPages "Section" "sessions").GroupByParam "vaporizer" }}
+                    <option value="{{ .Key | lower }}">{{ .Key }}</option>
+                    {{ end }}
+                </select>
+                <select id="moodFilter">
+                    <option value="">All Moods</option>
+                    <option value="relaxed">Relaxed</option>
+                    <option value="euphoric">Euphoric</option>
+                    <option value="creative">Creative</option>
+                    <option value="focused">Focused</option>
+                    <option value="sleepy">Sleepy</option>
+                    <option value="happy">Happy</option>
+                    <option value="energized">Energized</option>
+                </select>
+                <select id="tempFilter">
+                    <option value="">All Temps</option>
+                    <option value="low">Low (< 170°C)</option>
+                    <option value="med">Medium (170-190°C)</option>
+                    <option value="high">High (> 190°C)</option>
+                </select>
+            </div>
         </div>
 
         <div class="strains-mini-list">
             {{ range (where site.RegularPages "Section" "sessions") }}
             <a href="{{ .RelPermalink }}" class="strain-mini-card">
                 <div class="card-top">
-                    <span class="strain-name"><i class="fa-solid fa-leaf"></i> {{ .Params.strain | replace "-" " " | title }}</span>
+                    <span class="strain-name"><i class="fa-solid fa-leaf"></i> {{ .Params.strain  }}</span>
                     <span class="session-badge"><i class="fa-solid fa-star"></i> {{ .Params.rating }}/10</span>
+                </div>
+                <div class="session-title-home">
+                    <h3>{{ .Title }}</h3>
                 </div>
                 
                 <div class="strain-stats">
@@ -64,7 +93,7 @@
                 <div class="card-tags">
                     {{ if .Params.mood }}
                         <div class="tag-group">
-                            {{ range first 3 .Params.mood }}<span class="mini-tag effect">{{ . }}</span>{{ end }}
+                            {{ range first 3 .Params.mood }}<span class="mini-tag mood">{{ . }}</span>{{ end }}
                         </div>
                     {{ end }}
                 </div>

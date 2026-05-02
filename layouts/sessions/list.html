@@ -45,7 +45,7 @@
              data-temp="{{ .Params.temperature }}">
             <a href="{{ .Permalink }}">
                 <div class="card-header">
-                    <span class="strain-ref"><i class="fa-solid fa-leaf"></i> {{ .Params.strain | replace "-" " " | title }}</span>
+                    <span class="strain-ref"><i class="fa-solid fa-leaf"></i> {{ .Params.strain }}</span>
                     <span class="rating-badge"><i class="fa-solid fa-star"></i> {{ .Params.rating }}</span>
                 </div>
                 <h3>{{ .Title }}</h3>
