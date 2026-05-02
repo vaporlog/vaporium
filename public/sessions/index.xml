@@ -2,155 +2,155 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Sessions on Vaporium</title>
-    <link>http://localhost:1313/vaporium/sessions/</link>
+    <link>https://vaporium.github.io/vaporium/sessions/</link>
     <description>Recent content in Sessions on Vaporium</description>
     <image>
       <title>Vaporium</title>
-      <url>http://localhost:1313/vaporium/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/vaporium/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://vaporium.github.io/vaporium/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://vaporium.github.io/vaporium/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.160.0</generator>
     <language>en</language>
     <lastBuildDate>Sat, 02 May 2026 23:45:00 -0600</lastBuildDate>
-    <atom:link href="http://localhost:1313/vaporium/sessions/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://vaporium.github.io/vaporium/sessions/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GDP for Deep Sleep</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-gdp-sleep/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-gdp-sleep/</link>
       <pubDate>Sat, 02 May 2026 23:45:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-gdp-sleep/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-gdp-sleep/</guid>
       <description></description>
     </item>
     <item>
       <title>Classic Nightcap: OG Kush</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-og-kush-night/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-og-kush-night/</link>
       <pubDate>Sat, 02 May 2026 22:30:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-og-kush-night/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-og-kush-night/</guid>
       <description></description>
     </item>
     <item>
       <title>LA Confidential Night Owl</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-la-confidential-couch/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-la-confidential-couch/</link>
       <pubDate>Sat, 02 May 2026 22:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-la-confidential-couch/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-la-confidential-couch/</guid>
       <description></description>
     </item>
     <item>
       <title>Northern Lights Couch Lock</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-northern-lights-couch/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-northern-lights-couch/</link>
       <pubDate>Sat, 02 May 2026 21:15:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-northern-lights-couch/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-northern-lights-couch/</guid>
       <description></description>
     </item>
     <item>
       <title>Wedding Cake Luxury Extraction</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-wedding-cake-luxury/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-wedding-cake-luxury/</link>
       <pubDate>Sat, 02 May 2026 21:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-wedding-cake-luxury/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-wedding-cake-luxury/</guid>
       <description></description>
     </item>
     <item>
       <title>After Dinner GSC Dessert</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-gsc-dessert/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-gsc-dessert/</link>
       <pubDate>Sat, 02 May 2026 20:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-gsc-dessert/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-gsc-dessert/</guid>
       <description></description>
     </item>
     <item>
       <title>Social White Widow Session</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-white-widow-social/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-white-widow-social/</link>
       <pubDate>Sat, 02 May 2026 19:30:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-white-widow-social/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-white-widow-social/</guid>
       <description></description>
     </item>
     <item>
       <title>Rainbow Tasting with Zkittlez</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-zkittlez-chill/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-zkittlez-chill/</link>
       <pubDate>Sat, 02 May 2026 18:45:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-zkittlez-chill/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-zkittlez-chill/</guid>
       <description></description>
     </item>
     <item>
       <title>Movie Time: Pineapple Express</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-pineapple-express-movie/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-pineapple-express-movie/</link>
       <pubDate>Sat, 02 May 2026 18:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-pineapple-express-movie/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-pineapple-express-movie/</guid>
       <description></description>
     </item>
     <item>
       <title>Smooth Strawberry Banana Sunset</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-strawberry-banana-smooth/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-strawberry-banana-smooth/</link>
       <pubDate>Sat, 02 May 2026 17:45:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-strawberry-banana-smooth/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-strawberry-banana-smooth/</guid>
       <description></description>
     </item>
     <item>
       <title>Gaming Session with AK-47</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-ak47-gaming/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-ak47-gaming/</link>
       <pubDate>Sat, 02 May 2026 16:30:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-ak47-gaming/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-ak47-gaming/</guid>
       <description></description>
     </item>
     <item>
       <title>Incredible Hulk Strength session</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-bruce-banner-strong/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-bruce-banner-strong/</link>
       <pubDate>Sat, 02 May 2026 16:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-bruce-banner-strong/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-bruce-banner-strong/</guid>
       <description></description>
     </item>
     <item>
       <title>Painting with Jack Herer</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-jack-herer-art/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-jack-herer-art/</link>
       <pubDate>Sat, 02 May 2026 15:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-jack-herer-art/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-jack-herer-art/</guid>
       <description></description>
     </item>
     <item>
       <title>Creative Gelato Break</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-gelato-creative/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-gelato-creative/</link>
       <pubDate>Sat, 02 May 2026 14:30:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-gelato-creative/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-gelato-creative/</guid>
       <description></description>
     </item>
     <item>
       <title>Harlequin for Pain Management</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-harlequin-pain-relief/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-harlequin-pain-relief/</link>
       <pubDate>Sat, 02 May 2026 13:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-harlequin-pain-relief/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-harlequin-pain-relief/</guid>
       <description></description>
     </item>
     <item>
       <title>Zesty Super Lemon Haze</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-slh-zesty/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-slh-zesty/</link>
       <pubDate>Sat, 02 May 2026 12:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-slh-zesty/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-slh-zesty/</guid>
       <description></description>
     </item>
     <item>
       <title>Sour Diesel Mid-Day Boost</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-sour-diesel-boost/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-sour-diesel-boost/</link>
       <pubDate>Sat, 02 May 2026 11:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-sour-diesel-boost/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-sour-diesel-boost/</guid>
       <description></description>
     </item>
     <item>
       <title>Hiking with Green Crack</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-green-crack-hiking/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-green-crack-hiking/</link>
       <pubDate>Sat, 02 May 2026 10:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-green-crack-hiking/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-green-crack-hiking/</guid>
       <description></description>
     </item>
     <item>
       <title>Workday Balance with ACDC</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-acdc-work/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-acdc-work/</link>
       <pubDate>Sat, 02 May 2026 09:30:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-acdc-work/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-acdc-work/</guid>
       <description></description>
     </item>
     <item>
       <title>Morning Productivity with Blue Dream</title>
-      <link>http://localhost:1313/vaporium/sessions/2026-05-02-blue-dream-morning/</link>
+      <link>https://vaporium.github.io/vaporium/sessions/2026-05-02-blue-dream-morning/</link>
       <pubDate>Sat, 02 May 2026 09:00:00 -0600</pubDate>
-      <guid>http://localhost:1313/vaporium/sessions/2026-05-02-blue-dream-morning/</guid>
+      <guid>https://vaporium.github.io/vaporium/sessions/2026-05-02-blue-dream-morning/</guid>
       <description></description>
     </item>
   </channel>
